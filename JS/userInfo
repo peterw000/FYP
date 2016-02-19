@@ -1,0 +1,18 @@
+<?PHP
+$steamURL=$_REQUEST['userNumber'];
+$steamKEY="D465752F2A76D0E08587BD27439E75C8";
+$url="http://api.steampowered.com/ISteamUser/ResolveVanityURL/v0001/?key=".$steamKEY."&vanityurl=".$steamURL;
+
+
+$api = "http://api.steampowered.com/ISteamUser/GetPlayerSummaries/v0002/?key=XXXXXXXXXXXXXXXXXXXXXXX&steamids=76561197960435530&language=en_UK&format=json";
+
+$json = file_get_contents($url);
+
+$schema = json_decode($json);
+$schema2 = $schema->response->steamid;
+echo $schema2;
+return ;
+
+?>
+
+ 
